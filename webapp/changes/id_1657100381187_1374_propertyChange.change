@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1657100381187_1374_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "project12",
+    "packageName": "",
+    "content": {
+        "property": "width",
+        "newValue": "30%"
+    },
+    "selector": {
+        "id": "project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--Products::com.sap.vocabularies.UI.v1.LineItem::Table-Name",
+        "idIsLocal": false,
+        "type": "sap.m.Column"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/project12/changes/",
+    "projectId": "",
+    "creation": 1657100839357,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.102.1",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
