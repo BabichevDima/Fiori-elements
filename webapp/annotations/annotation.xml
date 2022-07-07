@@ -13,6 +13,106 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+
+            <Annotations Target="ODataDemo.Category">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ID</PropertyPath>
+                        <PropertyPath>Name</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Name"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="{@i18n>products}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>categories}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="ID">
+                    <Record>
+                        <PropertyValue Property="Value" Path="ID"/>
+                        <PropertyValue Property="Title" String="{@i18n>id}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>products}"/>
+                            <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Description"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ReleaseDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DiscontinuedDate"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="Rating"/>
+                            <PropertyValue AnnotationPath="@UI.DataPoint#Rating" Property="Target"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="Rating">
+                    <Record>
+                        <PropertyValue Path="Rating" Property="Value"/>
+                        <PropertyValue Int="5" Property="TargetValue"/>
+                        <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

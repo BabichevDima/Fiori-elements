@@ -20,9 +20,7 @@
         "uri": "/V2/(S(ptqqs5txamu0vburq531gqk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
-          "annotations": [
-            "annotation"
-          ],
+          "annotations": ["annotation"],
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
         }
@@ -118,6 +116,10 @@
           "name": "sap.suite.ui.generic.template.ListReport",
           "list": true,
           "settings": {
+            "tableSettings": {
+              "multiSelect": true,
+              "selectAll": true
+            },
             "condensedTableLayout": true,
             "smartVariantManagement": true,
             "enableTableFilterInPageVariant": true,
@@ -133,7 +135,13 @@
             "entitySet": "Categories",
             "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
             "component": {
-              "name": "sap.suite.ui.generic.template.ObjectPage"
+              "name": "sap.suite.ui.generic.template.ObjectPage",
+              "settings": {
+                "tableSettings": {
+                  "multiSelect": true,
+                  "selectAll": true
+                }
+              }
             },
             "pages": {
               "ObjectPage|Products": {
