@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:core="sap.ui.core">
+    <smartfilterbar:ControlConfiguration groupId="_BASIC" key="CategoryFilter" label="Categories Name" visibleInAdvancedArea="true">
+        <smartfilterbar:customControl>
+            <ComboBox id="categoryFilter" items="{path:'/Categories'}" showClearIcon="true">
+                <core:Item key="{Name}" text="{Name}"/>
+            </ComboBox>
+        </smartfilterbar:customControl>
+    </smartfilterbar:ControlConfiguration>
+</core:FragmentDefinition>
