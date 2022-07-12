@@ -54,7 +54,6 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <!-- <PropertyValue Property="Label" String="{@i18n>products}"/> -->
                             <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
                         </Record>
                     </Collection>
