@@ -55,6 +55,7 @@
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
+                            <PropertyValue Property="ID" String="ProductID"/>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -100,15 +101,6 @@
                     </Record>
                 </Annotation>
 
-                <Annotation Term="UI.DataPoint" Qualifier="Rating">
-                    <Record>
-                        <PropertyValue Path="Rating" Property="Value"/>
-                        <PropertyValue Property="Title" String="{@i18n>rating}"/>
-                        <PropertyValue Int="5" Property="TargetValue"/>
-                        <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
-                    </Record>
-                </Annotation>
-
                 <Annotation Term="UI.DataPoint" Qualifier="ReleaseDate">
                     <Record>
                         <PropertyValue Property="Value" Path="ReleaseDate"/>
@@ -127,6 +119,15 @@
                     <Record>
                         <PropertyValue Property="Value" Path="Description"/>
                         <PropertyValue Property="Title" String="{@i18n>description}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="Rating">
+                    <Record>
+                        <PropertyValue Path="Rating" Property="Value"/>
+                        <PropertyValue Property="Title" String="{@i18n>rating}"/>
+                        <PropertyValue Int="5" Property="TargetValue"/>
+                        <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
                     </Record>
                 </Annotation>
 
