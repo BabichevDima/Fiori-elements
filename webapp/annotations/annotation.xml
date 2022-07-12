@@ -61,12 +61,6 @@
             </Annotations>
 
             <Annotations Target="ODataDemo.Product">
-                <Annotation Term="UI.HeaderInfo">
-                    <Record>
-                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
-                    </Record>
-                </Annotation>
-
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
@@ -147,7 +141,6 @@
                         <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
                     </Record>
                 </Annotation>
-
             </Annotations>
 
         </Schema>
