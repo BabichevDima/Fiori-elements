@@ -18,7 +18,6 @@
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
                         <PropertyPath>ID</PropertyPath>
-                        <PropertyPath>Name</PropertyPath>
                     </Collection>
                 </Annotation>
 
@@ -55,7 +54,6 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="{@i18n>products}"/>
                             <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
                         </Record>
                     </Collection>
@@ -63,12 +61,6 @@
             </Annotations>
 
             <Annotations Target="ODataDemo.Product">
-                <Annotation Term="UI.HeaderInfo">
-                    <Record>
-                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
-                    </Record>
-                </Annotation>
-
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
@@ -94,11 +86,47 @@
                     </Collection>
                 </Annotation>
 
+                <Annotation Term="UI.DataPoint" Qualifier="ID">
+                    <Record>
+                        <PropertyValue Property="Value" Path="ID"/>
+                        <PropertyValue Property="Title" String="{@i18n>id}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="Price">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Price"/>
+                        <PropertyValue Property="Title" String="{@i18n>price}"/>
+                    </Record>
+                </Annotation>
+
                 <Annotation Term="UI.DataPoint" Qualifier="Rating">
                     <Record>
                         <PropertyValue Path="Rating" Property="Value"/>
+                        <PropertyValue Property="Title" String="{@i18n>rating}"/>
                         <PropertyValue Int="5" Property="TargetValue"/>
                         <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="ReleaseDate">
+                    <Record>
+                        <PropertyValue Property="Value" Path="ReleaseDate"/>
+                        <PropertyValue Property="Title" String="{@i18n>releaseDate}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="DiscontinuedDate">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DiscontinuedDate"/>
+                        <PropertyValue Property="Title" String="{@i18n>discontinuedDate}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="Description">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Description"/>
+                        <PropertyValue Property="Title" String="{@i18n>description}"/>
                     </Record>
                 </Annotation>
 
@@ -109,6 +137,8 @@
                                 <PropertyValue Property="Value" Path="Name"/>
                             </Record>
                         </PropertyValue>
+                        <PropertyValue Property="TypeName" String="{@i18n>product}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
                     </Record>
                 </Annotation>
             </Annotations>

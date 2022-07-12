@@ -81,6 +81,7 @@
         "settings": {
           "defaultBindingMode": "TwoWay",
           "defaultCountMode": "Inline",
+          "useBatch": false,
           "refreshAfterChange": false,
           "metadataUrlParams": {
             "sap-value-list": "none"
@@ -99,6 +100,24 @@
       "config": {},
       "routes": [],
       "targets": {}
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.viewExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "SmartFilterBarControlConfigurationExtension|Categories": {
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "project12.ext.fragments.MyCustomFilter",
+              "type": "XML"
+            }
+          }
+        },
+        "sap.ui.controllerExtensions": {
+          "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+            "controllerName": "project12.ext.controller.ListReportExt"
+          }
+        }
+      }
     }
   },
   "sap.ui.generic.app": {
