@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/V2/(S(ptqqs5txamu0vburq531gqk1))/OData/OData.svc/",
+                "uri": "/V2/(S(ptrrs5txamu0vburq531gqk1))/OData/OData.svc/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
