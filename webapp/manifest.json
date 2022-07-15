@@ -151,7 +151,17 @@
                     "settings": {
                         "tableSettings": {
                             "multiSelect": true,
-                            "selectAll": true
+                            "selectAll": true,
+                            "createWithParameterDialog": {
+                                "fields": {
+                                    "ID": {
+                                        "path": "Name"
+                                    },
+                                    "Name": {
+                                        "path": "ID"
+                                    }
+                                }
+                            }
                         },
                         "condensedTableLayout": true,
                         "smartVariantManagement": true,
@@ -172,7 +182,8 @@
                             "settings": {
                                 "tableSettings": {
                                     "multiSelect": true,
-                                    "selectAll": true
+                                    "selectAll": true,
+                                    "variantManagement": true
                                 }
                             }
                         },

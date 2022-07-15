@@ -44,6 +44,14 @@
                     </Record>
                 </Annotation>
 
+                <Annotations Target="ODataDemo.Category/Name">
+                    <Annotation String="{@i18n>name}" Term="Common.Label" />
+                </Annotations>
+                
+                <Annotations Target="ODataDemo.Category/ID">
+                    <Annotation String="{@i18n>id}" Term="Common.Label" />
+                </Annotations>
+
                 <Annotation Term="UI.DataPoint" Qualifier="ID">
                     <Record>
                         <PropertyValue Property="Value" Path="ID"/>
