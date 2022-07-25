@@ -8,7 +8,7 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/V2/(S(ptqqs5txamu0vburq531gqk1))/OData/OData.svc/$metadata">
+    <edmx:Reference Uri="/V2/(S(ptrrs5txamu0vburq531gqk1))/OData/OData.svc/$metadata">
         <edmx:Include Namespace="ODataDemo"/>
     </edmx:Reference>
     <edmx:DataServices>
@@ -55,6 +55,7 @@
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
+                            <PropertyValue Property="ID" String="ProductID"/>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -65,6 +66,7 @@
                     <Collection>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Price"/>
@@ -79,7 +81,7 @@
                             <PropertyValue Property="Value" Path="DiscontinuedDate"/>
                         </Record>
                         <Record Type="UI.DataFieldForAnnotation">
-                            <PropertyValue Property="Label" String="Rating"/>
+                            <PropertyValue Property="Label" String="{@i18n>rating}"/>
                             <PropertyValue AnnotationPath="@UI.DataPoint#Rating" Property="Target"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
@@ -97,15 +99,6 @@
                     <Record>
                         <PropertyValue Property="Value" Path="Price"/>
                         <PropertyValue Property="Title" String="{@i18n>price}"/>
-                    </Record>
-                </Annotation>
-
-                <Annotation Term="UI.DataPoint" Qualifier="Rating">
-                    <Record>
-                        <PropertyValue Path="Rating" Property="Value"/>
-                        <PropertyValue Property="Title" String="{@i18n>rating}"/>
-                        <PropertyValue Int="5" Property="TargetValue"/>
-                        <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
                     </Record>
                 </Annotation>
 
@@ -127,6 +120,15 @@
                     <Record>
                         <PropertyValue Property="Value" Path="Description"/>
                         <PropertyValue Property="Title" String="{@i18n>description}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="Rating">
+                    <Record>
+                        <PropertyValue Path="Rating" Property="Value"/>
+                        <PropertyValue Property="Title" String="{@i18n>rating}"/>
+                        <PropertyValue Int="5" Property="TargetValue"/>
+                        <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
                     </Record>
                 </Annotation>
 

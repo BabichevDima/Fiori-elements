@@ -7,7 +7,7 @@
     "packageName": "",
     "content": {
         "property": "width",
-        "newValue": "20%"
+        "newValue": "10%"
     },
     "selector": {
         "id": "project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--listReport-ID",
@@ -18,7 +18,7 @@
     "texts": {},
     "namespace": "apps/project12/changes/",
     "projectId": "",
-    "creation": 1657107428416,
+    "creation": 1657626597669,
     "originalLanguage": "",
     "support": {
         "generator": "changeUtils: SAPFioriTools",
