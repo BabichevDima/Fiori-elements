@@ -150,6 +150,7 @@
                     "list": true,
                     "settings": {
                         "tableSettings": {
+                            "inlineDelete": false,
                             "multiSelect": true,
                             "selectAll": true,
                             "createWithParameterDialog": {

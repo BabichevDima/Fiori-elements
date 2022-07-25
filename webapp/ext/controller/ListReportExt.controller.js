@@ -6,6 +6,10 @@ sap.ui.define([
 ], function (Filter, SmartFilterBar, ComboBox, FilterOperator) {
     "use strict";
     return {
+        onInit: function () {
+            this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--deleteEntry").setVisible(false);
+        },
+
         getCustomAppStateDataExtension: function (oCustomData) {
             if (oCustomData) {
                 var oCustomField = this.oView.byId("categoryFilter");

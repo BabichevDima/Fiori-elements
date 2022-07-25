@@ -44,14 +44,6 @@
                     </Record>
                 </Annotation>
 
-                <Annotations Target="ODataDemo.Category/Name">
-                    <Annotation String="{@i18n>name}" Term="Common.Label" />
-                </Annotations>
-                
-                <Annotations Target="ODataDemo.Category/ID">
-                    <Annotation String="{@i18n>id}" Term="Common.Label" />
-                </Annotations>
-
                 <Annotation Term="UI.DataPoint" Qualifier="ID">
                     <Record>
                         <PropertyValue Property="Value" Path="ID"/>
@@ -67,6 +59,14 @@
                         </Record>
                     </Collection>
                 </Annotation>
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Category/Name">
+                <Annotation String="{@i18n>name}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Category/ID">
+                <Annotation String="{@i18n>id}" Term="Common.Label" />
             </Annotations>
 
             <Annotations Target="ODataDemo.Product">
@@ -151,8 +151,55 @@
                         <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
                     </Record>
                 </Annotation>
+
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>supplierInfo}"/>
+                            <PropertyValue Property="Target" AnnotationPath="Supplier/@UI.FieldGroup#SupplierSection" />
+                        </Record>
+                    </Collection>
+                </Annotation>
             </Annotations>
 
+            <Annotations Target="ODataDemo.Supplier">
+                <Annotation Term="UI.FieldGroup" Qualifier="SupplierSection">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Name"/>
+                                    <PropertyValue Property="Label" String="{@i18n>name}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ID"/>
+                                    <PropertyValue Property="Label" String="{@i18n>id}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/Street"/>
+                                    <PropertyValue Property="Label" String="{@i18n>street}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/City"/>
+                                    <PropertyValue Property="Label" String="{@i18n>city}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/State"/>
+                                    <PropertyValue Property="Label" String="{@i18n>state}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/ZipCode"/>
+                                    <PropertyValue Property="Label" String="{@i18n>zipCode}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/Country"/>
+                                    <PropertyValue Property="Label" String="{@i18n>country}"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
