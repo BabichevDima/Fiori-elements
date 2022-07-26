@@ -35,7 +35,7 @@ server:
       beforeMiddleware: csp
       configuration:
         service:
-          urlPath: /V2/(S(ptrrs5txamu0vburq531gqk1))/OData/OData.svc
+          urlPath: /V2/(S(pqars5txamu0vburq531gqk1))/OData/OData.svc
           metadataXmlPath: ./webapp/localService/metadata.xml
           mockdataRootPath: ./webapp/localService/data
           generateMockData: true

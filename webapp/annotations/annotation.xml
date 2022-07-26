@@ -8,16 +8,82 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/V2/(S(ptrrs5txamu0vburq531gqk1))/OData/OData.svc/$metadata">
+    <edmx:Reference Uri="/V2/(S(pqars5txamu0vburq531gqk1))/OData/OData.svc/$metadata">
         <edmx:Include Namespace="ODataDemo"/>
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
 
+            <Annotations Target="ODataDemo.Category/Name">
+                <Annotation String="{@i18n>name}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Category/ID">
+                <Annotation String="{@i18n>id}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/Name">
+                <Annotation String="{@i18n>name}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/Description">
+                <Annotation String="{@i18n>description}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/ReleaseDate">
+                <Annotation String="{@i18n>releaseDate}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/DiscontinuedDate">
+                <Annotation String="{@i18n>discontinuedDate}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/Rating">
+                <Annotation String="{@i18n>rating}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/Price">
+                <Annotation String="{@i18n>price}" Term="Common.Label" />
+            </Annotations>
+
+            <Annotations Target="ODataDemo.Product/ID">
+                <Annotation String="{@i18n>id}" Term="Common.Label" />
+            </Annotations>
+
             <Annotations Target="ODataDemo.Category">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="{@i18n>products}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>categories}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#ID"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
                         <PropertyPath>ID</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>product}"/>
+                            <PropertyValue Property="ID" String="ProductID"/>
+                            <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
+                        </Record>
                     </Collection>
                 </Annotation>
 
@@ -32,18 +98,6 @@
                     </Collection>
                 </Annotation>
 
-                <Annotation Term="UI.HeaderInfo">
-                    <Record Type="UI.HeaderInfoType">
-                        <PropertyValue Property="Title">
-                            <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Name"/>
-                            </Record>
-                        </PropertyValue>
-                        <PropertyValue Property="TypeName" String="{@i18n>products}"/>
-                        <PropertyValue Property="TypeNamePlural" String="{@i18n>categories}"/>
-                    </Record>
-                </Annotation>
-
                 <Annotation Term="UI.DataPoint" Qualifier="ID">
                     <Record>
                         <PropertyValue Property="Value" Path="ID"/>
@@ -51,47 +105,82 @@
                     </Record>
                 </Annotation>
 
-                <Annotation Term="UI.Facets">
-                    <Collection>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Target" AnnotationPath="Products/@UI.LineItem"/>
-                            <PropertyValue Property="ID" String="ProductID"/>
-                        </Record>
-                    </Collection>
+                <Annotation Term="UI.DataPoint" Qualifier="Name">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Name"/>
+                        <PropertyValue Property="Title" String="{@i18n>name}"/>
+                    </Record>
                 </Annotation>
             </Annotations>
 
-            <Annotations Target="ODataDemo.Category/Name">
-                <Annotation String="{@i18n>name}" Term="Common.Label" />
-            </Annotations>
-
-            <Annotations Target="ODataDemo.Category/ID">
-                <Annotation String="{@i18n>id}" Term="Common.Label" />
-            </Annotations>
-
             <Annotations Target="ODataDemo.Product">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="{@i18n>product}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Price" />
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#ReleaseDate" />
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DiscontinuedDate" />
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating" />
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Description" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>supplierInfo}"/>
+                            <PropertyValue Property="Target" AnnotationPath="Supplier/@UI.FieldGroup#SupplierSection"/>
+                            <PropertyValue Property="ID" String="SupplierID"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Name"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Lable" Path="{@i18n>name}"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Price"/>
+                            <PropertyValue Property="Lable" Path="{@i18n>Price}"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Description"/>
+                            <PropertyValue Property="Lable" Path="{@i18n>Description}"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Lable" Path="{@i18n>ReleaseDate}"/>
                             <PropertyValue Property="Value" Path="ReleaseDate"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Lable" Path="{@i18n>DiscontinuedDate}"/>
                             <PropertyValue Property="Value" Path="DiscontinuedDate"/>
                         </Record>
                         <Record Type="UI.DataFieldForAnnotation">
                             <PropertyValue Property="Label" String="{@i18n>rating}"/>
-                            <PropertyValue AnnotationPath="@UI.DataPoint#Rating" Property="Target"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating"/>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -138,27 +227,6 @@
                         <PropertyValue Int="5" Property="TargetValue"/>
                         <PropertyValue EnumMember="UI.VisualizationType/Rating" Property="Visualization"/>
                     </Record>
-                </Annotation>
-
-                <Annotation Term="UI.HeaderInfo">
-                    <Record Type="UI.HeaderInfoType">
-                        <PropertyValue Property="Title">
-                            <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="Name"/>
-                            </Record>
-                        </PropertyValue>
-                        <PropertyValue Property="TypeName" String="{@i18n>product}"/>
-                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
-                    </Record>
-                </Annotation>
-
-                <Annotation Term="UI.Facets">
-                    <Collection>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="{@i18n>supplierInfo}"/>
-                            <PropertyValue Property="Target" AnnotationPath="Supplier/@UI.FieldGroup#SupplierSection" />
-                        </Record>
-                    </Collection>
                 </Annotation>
             </Annotations>
 
