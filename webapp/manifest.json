@@ -127,6 +127,9 @@
         "sap.ui.controllerExtensions": {
           "sap.suite.ui.generic.template.ListReport.view.ListReport": {
             "controllerName": "project12.ext.controller.ListReportExt"
+          },
+          "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+            "controllerName": "project12.ext.controller.ObjectPageExt"
           }
         }
       }
