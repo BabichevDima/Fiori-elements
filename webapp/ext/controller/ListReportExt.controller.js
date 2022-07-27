@@ -29,19 +29,35 @@ sap.ui.define([
             }
         },
         onBeforeRebindTableExtension: function (oEvent) {
-            var oBindingParams = oEvent.getParameter("bindingParams");
+            var customFilter          = this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--listReportFilter-btnBasicSearch");
+            var value                 = customFilter.getProperty("value").trim();
+            var oBindingParams        = oEvent.getParameter("bindingParams");
             oBindingParams.parameters = oBindingParams.parameters || {};
 
-            var oSmartTable = oEvent.getSource();
+            var oSmartTable     = oEvent.getSource();
             var oSmartFilterBar = this.byId(oSmartTable.getSmartFilterId());
             if (oSmartFilterBar instanceof SmartFilterBar) {
                 var oCustomControl = oSmartFilterBar.getControlByKey("CategoryFilter");
                 if (oCustomControl instanceof ComboBox) {
                     var vCategory = oCustomControl.getSelectedKey();
 
+                    if (value) {
+                        var oFilters = new Filter({
+                          filters: [
+                            new Filter('Name', FilterOperator.Contains, value)
+                          ],
+                          and: false
+                        });
+                        if (!isNaN(value)) {
+                          oFilters.aFilters.push(
+                            new Filter('ID', FilterOperator.EQ, +value)
+                          );
+                        }
+                        oBindingParams.filters.push(oFilters);
+                      }
                      if (vCategory) {
-                        oBindingParams.filters.push(new Filter("Name", FilterOperator.EQ , vCategory))
-                     }
+                        oBindingParams.filters.push(new Filter("Name", FilterOperator.Contains , vCategory));
+                    }
                     switch (vCategory) {
                         case "Food":
                             oBindingParams.filters.push(new Filter("Name", "EQ", "Food"));
