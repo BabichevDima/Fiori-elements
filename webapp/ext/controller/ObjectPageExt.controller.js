@@ -8,9 +8,9 @@ sap.ui.define(
     return {
 
       onBeforeRebindTableExtension: function (oEvent) {
-        var oItemsBinding = oEvent.getParameter("bindingParams");
-        var customFilter  = this.oView.byId("project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--ProductID::Table::Toolbar::SearchField");
-        var value         = customFilter.getProperty("value").trim();
+        var oItemsBinding  = oEvent.getParameter("bindingParams");
+        var oCustomFilter  = this.oView.byId("project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--ProductID::Table::Toolbar::SearchField");
+        var value          = oCustomFilter.getProperty("value").trim();
 
         if (value) {
           var oFilters = new Filter({

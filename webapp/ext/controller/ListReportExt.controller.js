@@ -29,8 +29,8 @@ sap.ui.define([
             }
         },
         onBeforeRebindTableExtension: function (oEvent) {
-            var customFilter          = this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--listReportFilter-btnBasicSearch");
-            var value                 = customFilter.getProperty("value").trim();
+            var oCustomFilter         = this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--listReportFilter-btnBasicSearch");
+            var value                 = oCustomFilter.getProperty("value").trim();
             var oBindingParams        = oEvent.getParameter("bindingParams");
             oBindingParams.parameters = oBindingParams.parameters || {};
 
