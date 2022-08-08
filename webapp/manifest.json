@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(pqars5txqqu0vburq531gqk1))/OData/OData.svc/",
+        "uri": "/V2/(S(pqars5txqqu0vbffq531gqk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": ["annotation"],
@@ -85,7 +85,8 @@
           "refreshAfterChange": false,
           "metadataUrlParams": {
             "sap-value-list": "none"
-          }
+          },
+          "disableHeadRequestForToken": true
         }
       },
       "@i18n": {
