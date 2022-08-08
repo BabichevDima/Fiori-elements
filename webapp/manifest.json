@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(pqars5txqqu0vbffq531gqk1))/OData/OData.svc/",
+        "uri": "/V2/(S(pqars5txgpu0vbffq531gqk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": ["annotation"],
@@ -128,6 +128,9 @@
         "sap.ui.controllerExtensions": {
           "sap.suite.ui.generic.template.ListReport.view.ListReport": {
             "controllerName": "project12.ext.controller.ListReportExt"
+          },
+          "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+            "controllerName": "project12.ext.controller.ObjectPageExt"
           }
         }
       }
