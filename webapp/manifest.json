@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(pqars5txgpu0vbffq531gqk1))/OData/OData.svc/",
+        "uri": "/V2/(S(pqars5tlspd0vbffq531gqk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": ["annotation"],
@@ -195,25 +195,25 @@
                     "tableSettings": {
                       "createWithParameterDialog": {
                         "fields": {
-                          "Description": {
+                          "Name": {
                             "path": "Name"
                           },
-                          "DiscontinuedDate": {
+                          "ID": {
                             "path": "ID"
                           },
-                          "ID": {
+                          "Price": {
                             "path": "Price"
                           },
-                          "Name": {
+                          "ReleaseDate": {
                             "path": "ReleaseDate"
                           },
-                          "Price": {
+                          "DiscontinuedDate": {
                             "path": "DiscontinuedDate"
                           },
                           "Rating": {
                             "path": "Rating"
                           },
-                          "ReleaseDate": {
+                          "Description": {
                             "path": "Description"
                           }
                         }
