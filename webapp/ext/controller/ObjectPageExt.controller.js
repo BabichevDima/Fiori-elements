@@ -1,31 +1,27 @@
 sap.ui.define(
-  ["sap/ui/model/json/JSONModel", "sap/m/MessageBox", "sap/m/MessageToast"],
-  function (JSONModel, MessageBox, MessageToast) {
+  ["sap/ui/model/json/JSONModel",
+  "sap/m/MessageBox",
+  "sap/m/MessageToast",
+  "project12/utils/Constants"],
+  function (JSONModel, MessageBox, MessageToast, Constants) {
     "use strict";
 
-    var sDeleteProduct              = "project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--ProductID::deleteEntry";
-    var sDeleteProducts             = "project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--delete";
-    var sDeleteProductOnObjectPage  = "project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Products--delete";
-    var sCreateProduct              = "project12::sap.suite.ui.generic.template.ObjectPage.view.Details::Categories--ProductID::addEntry";
     return {
+
+      // onBeforeRendering: function () {
+      //   this.oView.byId(Constants.returnConstant().sDeleteProductsButton)?.setVisible(false);
+      // },
+
       onAfterRendering: function () {
-        if (this.oView.byId(sDeleteProduct)) {
-          this.oView.byId(sDeleteProduct).setVisible(false);
-        }
+        this.oView.byId(Constants.returnConstant().sDeleteProductButton)?.setVisible(false);
+        this.oView.byId(Constants.returnConstant().sDeleteProductButtonOnObjectPage)?.setVisible(false);
+        this.oView.byId(Constants.returnConstant().sCreateProductButton)?.setVisible(false);
 
         setTimeout(() => {
-          if (this.oView.byId(sDeleteProducts)) {
-            this.oView.byId(sDeleteProducts).setVisible(false);
+          if (this.oView.byId(Constants.returnConstant().sDeleteProductsButton)) {
+            this.oView.byId(Constants.returnConstant().sDeleteProductsButton)?.setVisible(false);
           }
         }, 0);
-
-        if (this.oView.byId(sDeleteProductOnObjectPage)) {
-          this.oView.byId(sDeleteProductOnObjectPage).setVisible(false);
-        }
-
-        if (this.oView.byId(sCreateProduct)) {
-          this.oView.byId(sCreateProduct).setVisible(false);
-        }
       },
 
       onInit: function () {
@@ -99,7 +95,6 @@ sap.ui.define(
           },
         });
 
-        // oODataModel.refresh();
         this.onDialogClosePress();
       },
 

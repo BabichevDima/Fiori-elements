@@ -2,12 +2,13 @@ sap.ui.define([
     "sap/ui/model/Filter",
     "sap/ui/comp/smartfilterbar/SmartFilterBar",
     "sap/m/ComboBox",
-    "sap/ui/model/FilterOperator"
-], function (Filter, SmartFilterBar, ComboBox, FilterOperator) {
+    "sap/ui/model/FilterOperator",
+    "project12/utils/Constants"
+], function (Filter, SmartFilterBar, ComboBox, FilterOperator, Constants) {
     "use strict";
     return {
         onInit: function () {
-            this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--deleteEntry").setVisible(false);
+            this.oView.byId(Constants.returnConstant().sDeleteProductButtonOnListReport)?.setVisible(false);
         },
 
         getCustomAppStateDataExtension: function (oCustomData) {
