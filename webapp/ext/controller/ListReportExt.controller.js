@@ -2,12 +2,13 @@ sap.ui.define([
     "sap/ui/model/Filter",
     "sap/ui/comp/smartfilterbar/SmartFilterBar",
     "sap/m/ComboBox",
-    "sap/ui/model/FilterOperator"
-], function (Filter, SmartFilterBar, ComboBox, FilterOperator) {
+    "sap/ui/model/FilterOperator",
+    "project12/utils/Constants"
+], function (Filter, SmartFilterBar, ComboBox, FilterOperator, Constants) {
     "use strict";
     return {
         onInit: function () {
-            this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--deleteEntry").setVisible(false);
+            this.oView.byId(Constants.sDeleteProductButtonOnListReport).setVisible(false);
         },
 
         getCustomAppStateDataExtension: function (oCustomData) {
@@ -29,7 +30,7 @@ sap.ui.define([
             }
         },
         onBeforeRebindTableExtension: function (oEvent) {
-            var oCustomFilter         = this.oView.byId("project12::sap.suite.ui.generic.template.ListReport.view.ListReport::Categories--listReportFilter-btnBasicSearch");
+            var oCustomFilter         = this.oView.byId(Constants.sSearchFieldOnListReport);
             var value                 = oCustomFilter.getProperty("value").trim();
             var oBindingParams        = oEvent.getParameter("bindingParams");
             oBindingParams.parameters = oBindingParams.parameters || {};

@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(pqars5txgpu0vbffq531gqk1))/OData/OData.svc/",
+        "uri": "/V2/(S(pPTjr5dryudxmbffq531rtk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": ["annotation"],
@@ -130,7 +130,25 @@
             "controllerName": "project12.ext.controller.ListReportExt"
           },
           "sap.suite.ui.generic.template.ObjectPage.view.Details": {
-            "controllerName": "project12.ext.controller.ObjectPageExt"
+            "controllerName": "project12.ext.controller.ObjectPageExt",
+            "sap.ui.generic.app": {
+              "Categories": {
+                "EntitySet": "Categories",
+                "Sections": {
+                  "ProductID": {
+                    "id": "ProductID",
+                    "Actions": {
+                      "Action ID": {
+                        "id": "ProductID",
+                        "text": "Create",
+                        "press": "openDialog",
+                        "requiresSelection": false
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -195,25 +213,25 @@
                     "tableSettings": {
                       "createWithParameterDialog": {
                         "fields": {
-                          "Description": {
+                          "Name": {
                             "path": "Name"
                           },
-                          "DiscontinuedDate": {
+                          "ID": {
                             "path": "ID"
                           },
-                          "ID": {
+                          "Price": {
                             "path": "Price"
                           },
-                          "Name": {
+                          "ReleaseDate": {
                             "path": "ReleaseDate"
                           },
-                          "Price": {
+                          "DiscontinuedDate": {
                             "path": "DiscontinuedDate"
                           },
                           "Rating": {
                             "path": "Rating"
                           },
-                          "ReleaseDate": {
+                          "Description": {
                             "path": "Description"
                           }
                         }

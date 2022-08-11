@@ -8,7 +8,7 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/V2/(S(pqars5txgpu0vbffq531gqk1))/OData/OData.svc/$metadata">
+    <edmx:Reference Uri="/V2/(S(pPTjr5dryudxmbffq531rtk1))/OData/OData.svc/$metadata">
         <edmx:Include Namespace="ODataDemo"/>
     </edmx:Reference>
     <edmx:DataServices>
@@ -159,23 +159,23 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>name}"/>
                             <PropertyValue Property="Value" Path="Name"/>
-                            <PropertyValue Property="Lable" Path="{@i18n>name}"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>price}"/>
                             <PropertyValue Property="Value" Path="Price"/>
-                            <PropertyValue Property="Lable" Path="{@i18n>Price}"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>description}"/>
                             <PropertyValue Property="Value" Path="Description"/>
-                            <PropertyValue Property="Lable" Path="{@i18n>Description}"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Lable" Path="{@i18n>ReleaseDate}"/>
+                            <PropertyValue Property="Label" String="{@i18n>releaseDate}"/>
                             <PropertyValue Property="Value" Path="ReleaseDate"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Lable" Path="{@i18n>DiscontinuedDate}"/>
+                            <PropertyValue Property="Label" String="{@i18n>discontinuedDate}"/>
                             <PropertyValue Property="Value" Path="DiscontinuedDate"/>
                         </Record>
                         <Record Type="UI.DataFieldForAnnotation">
