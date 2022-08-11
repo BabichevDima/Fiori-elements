@@ -8,15 +8,18 @@ sap.ui.define(
 
     return {
       onAfterRendering: function () {
-        this.oView.byId(Constants.returnConstant().sDeleteProductButton)?.setVisible(false);
-        this.oView.byId(Constants.returnConstant().sDeleteProductButtonOnObjectPage)?.setVisible(false);
-        this.oView.byId(Constants.returnConstant().sCreateProductButton)?.setVisible(false);
-
-        setTimeout(() => {
-          if (this.oView.byId(Constants.returnConstant().sDeleteProductsButton)) {
-            this.oView.byId(Constants.returnConstant().sDeleteProductsButton)?.setVisible(false);
-          }
-        }, 0);
+        if (this.oView.byId(Constants.sDeleteProductButton)) {
+          this.oView.byId(Constants.sDeleteProductButton).setVisible(false);
+        }
+        if (this.oView.byId(Constants.sDeleteProductButtonOnObjectPage)) {
+          this.oView.byId(Constants.sDeleteProductButtonOnObjectPage).setVisible(false);
+        }
+        if (this.oView.byId(Constants.sCreateProductButton)) {
+          this.oView.byId(Constants.sCreateProductButton).setVisible(false);
+        }
+        if (this.oView.byId(Constants.sDeleteProductsButton)) {
+          this.oView.byId(Constants.sDeleteProductsButton).setVisible(false);
+        }
       },
 
 

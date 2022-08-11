@@ -8,7 +8,7 @@ sap.ui.define([
     "use strict";
     return {
         onInit: function () {
-            this.oView.byId(Constants.returnConstant().sDeleteProductButtonOnListReport)?.setVisible(false);
+            this.oView.byId(Constants.sDeleteProductButtonOnListReport).setVisible(false);
         },
 
         getCustomAppStateDataExtension: function (oCustomData) {
