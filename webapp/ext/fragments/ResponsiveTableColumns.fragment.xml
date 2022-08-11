@@ -2,13 +2,7 @@
     <Column>
         <Text text="Supplier"/>
         <customData>
-            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn&quot;, &quot;leadingProperty&quot;: &quot;Supplier&quot;, &quot;columnIndex&quot;: &quot;5&quot;}"/>
-        </customData>
-    </Column>
-    <Column>
-        <Text text="Category"/>
-        <customData>
-            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn&quot;, &quot;leadingProperty&quot;: &quot;Category&quot;, &quot;columnIndex&quot;: &quot;6&quot;}"/>
+            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;CustomColumn2&quot;, &quot;leadingProperty&quot;: &quot;Supplier/Name&quot;, &quot;columnIndex&quot;: &quot;5&quot;}"/>
         </customData>
     </Column>
 </core:FragmentDefinition>
