@@ -7,7 +7,11 @@
 |**Generation Platform**<br>Visual Studio Code|
 |**Floorplan Used**<br>List Report Object Page V2|
 |**Service Type**<br>OData Url|
+<<<<<<< HEAD
 |**Service URL**<br>https://services.odata.org/V2/(S(pqars5txqqu0vrrrq531gqk1))/OData/OData.svc/
+=======
+|**Service URL**<br>https://services.odata.org/V2/(S(pPTjr5dryudxmbffq531rtk1))/OData/OData.svc/
+>>>>>>> 4f377781999196e5c6dd6736482c0104dcd6c35e
 |**Module Name**<br>project12|
 |**Application Title**<br>App Title|
 |**Namespace**<br>|
