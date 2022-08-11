@@ -1,12 +1,14 @@
 sap.ui.define(
   [
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
     "project12/utils/Constants",
     "sap/suite/ui/generic/template/extensionAPI/extensionAPI",
   ],
-  function (JSONModel, MessageBox, MessageToast, Constants, extensionAPI) {
+  function (Filter, FilterOperator, JSONModel, MessageBox, MessageToast, Constants, extensionAPI) {
     "use strict";
 
     return {
@@ -33,6 +35,30 @@ sap.ui.define(
         }
         if (this.oView.byId(Constants.sCreateProductButton)) {
           this.oView.byId(Constants.sCreateProductButton).setVisible(false);
+        }
+      },
+
+      onBeforeRebindTableExtension: function (oEvent) {
+        var oItemsBinding  = oEvent.getParameter("bindingParams");
+        var oCustomFilter  = this.oView.byId(Constants.sSearchFieldOnObjectPage);
+        var value          = oCustomFilter.getProperty("value").trim();
+
+        if (value) {
+          var oFilters = new Filter({
+            filters: [
+              new Filter('Name', FilterOperator.Contains, value),
+              new Filter('Description', FilterOperator.Contains, value)
+            ],
+            and: false
+          });
+
+          if (!isNaN(value)) {
+            oFilters.aFilters.push(
+              new Filter('Price', FilterOperator.EQ, +value),
+              new Filter('Rating', FilterOperator.EQ, +value)
+            );
+          }
+          oItemsBinding.filters.push(oFilters);
         }
       },
 
