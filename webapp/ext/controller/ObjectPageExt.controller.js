@@ -1,12 +1,29 @@
 sap.ui.define(
-  ["sap/ui/model/json/JSONModel",
-  "sap/m/MessageBox",
-  "sap/m/MessageToast",
-  "project12/utils/Constants"],
-  function (JSONModel, MessageBox, MessageToast, Constants) {
+  [
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageBox",
+    "sap/m/MessageToast",
+    "project12/utils/Constants",
+    "sap/suite/ui/generic/template/extensionAPI/extensionAPI",
+  ],
+  function (JSONModel, MessageBox, MessageToast, Constants, extensionAPI) {
     "use strict";
 
     return {
+      onInit: function () {
+        extensionAPI.getExtensionAPIPromise(this.getView()).then(
+          function (oExtensionAPI) {
+            oExtensionAPI.attachPageDataLoaded(
+              function () {
+                this.getView()
+                  .byId(Constants.sDeleteProductsButton)
+                  .setVisible(false);
+              }.bind(this)
+            );
+          }.bind(this)
+        );
+      },
+
       onAfterRendering: function () {
         if (this.oView.byId(Constants.sDeleteProductButton)) {
           this.oView.byId(Constants.sDeleteProductButton).setVisible(false);
@@ -17,11 +34,7 @@ sap.ui.define(
         if (this.oView.byId(Constants.sCreateProductButton)) {
           this.oView.byId(Constants.sCreateProductButton).setVisible(false);
         }
-        if (this.oView.byId(Constants.sDeleteProductsButton)) {
-          this.oView.byId(Constants.sDeleteProductsButton).setVisible(false);
-        }
       },
-
 
       _setNewProductModel: function () {
         var oNewProduct = new JSONModel({
