@@ -7,11 +7,6 @@ sap.ui.define(
     "use strict";
 
     return {
-
-      // onBeforeRendering: function () {
-      //   this.oView.byId(Constants.returnConstant().sDeleteProductsButton)?.setVisible(false);
-      // },
-
       onAfterRendering: function () {
         this.oView.byId(Constants.returnConstant().sDeleteProductButton)?.setVisible(false);
         this.oView.byId(Constants.returnConstant().sDeleteProductButtonOnObjectPage)?.setVisible(false);
@@ -24,9 +19,6 @@ sap.ui.define(
         }, 0);
       },
 
-      onInit: function () {
-        this.getOwnerComponent().getRouter().getRoute();
-      },
 
       _setNewProductModel: function () {
         var oNewProduct = new JSONModel({
