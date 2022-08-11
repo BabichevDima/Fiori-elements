@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/(S(pPTjr5dryudxmbffq531rtk1))/OData/OData.svc/",
+        "uri": "/V2/(S(pqars5txqqu0vrrrq531gqk1))/OData/OData.svc/",
         "type": "OData",
         "settings": {
           "annotations": ["annotation"],
@@ -122,6 +122,14 @@
               "className": "sap.ui.core.Fragment",
               "fragmentName": "project12.ext.fragments.ResponsiveTableColumns",
               "type": "XML"
+            },
+            "AfterFacet|Categories|ProductID": {
+              "type": "XML",
+              "className": "sap.ui.core.Fragment",
+              "fragmentName": "project12.ext.fragment.MyCustomView",
+              "sap.ui.generic.app": {
+                "title": "{{titleForCustomSection}}"
+              }
             }
           }
         },
