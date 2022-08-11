@@ -1,28 +1,28 @@
 <core:FragmentDefinition xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core">
-	<Dialog title="{i18n>PopupProductTitle}" id="DialogId">
+	<Dialog title="{i18n>DialogTitle}" id="DialogId">
 		<f:SimpleForm maxContainerCols="1" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
 			<f:content>
 
-				<Label text="{i18n>Name}"/>
-				<Input valueLiveUpdate="true" fieldGroupIds="groupValueProduct" placeholder="{i18n>PlaceholderFieldName}" value="{path: 'newProduct>/Name'}"/>
+				<Label text="{i18n>name}"/>
+				<Input valueLiveUpdate="true" fieldGroupIds="groupValueProduct" placeholder="{i18n>PlaceholderName}" value="{path: 'newProduct>/Name'}"/>
 
-				<Label text="{i18n>Description}"/>
+				<Label text="{i18n>description}"/>
 				<Input valueLiveUpdate="true" fieldGroupIds="groupValueProduct" placeholder="{i18n>PlaceholderDescription}" class="sapUiTinyMarginEnd" value="{path: 'newProduct>/Description', type: 'sap.ui.model.type.String', constraints: {minLength: 3, maxLength: 100}}"/>
 
-				<Label text="{i18n>ReleaseDate}" required="true"/>
+				<Label text="{i18n>releaseDate}" required="true"/>
 				<DatePicker change="changeDatePicker" id="ReleaseDate" fieldGroupIds="groupValueProduct" value="{path: 'newProduct>/ReleaseDate', type: 'sap.ui.model.type.DateTime', formatOptions: {source: {pattern: 'YYYY-MM-dd'}, pattern: 'MMM dd YYYY'}}"/>
 
-				<Label text="{i18n>DiscontinuedDate}"/>
+				<Label text="{i18n>discontinuedDate}"/>
 				<DatePicker change="changeDatePicker" id="DiscontinuedDate" fieldGroupIds="groupValueProduct" value="{path: 'newProduct>/DiscontinuedDate', type: 'sap.ui.model.type.DateTime', formatOptions: {source: {pattern: 'YYYY-MM-dd'}, pattern: 'MMM dd YYYY'}}"/>
 
 				<VBox>
-					<Label text="{i18n>Rating}" required="true"/>
+					<Label text="{i18n>rating}" required="true"/>
 					<RatingIndicator id="NewRating" maxValue="5" class="sapUiSmallMarginBottom" value="{newProduct>/Rating}"  fieldGroupIds="groupValueProduct" />
 				</VBox>
 
-				<Label text="{i18n>Price}" required="true"/>
+				<Label text="{i18n>price}" required="true"/>
 				<Input valueLiveUpdate="true" fieldGroupIds="groupValueProduct" placeholder="{i18n>PlaceholderPrice}" value="{ path: 'newProduct>/Price', type: 'sap.ui.model.type.Decimal'}"/>
 
 			</f:content>

@@ -59,15 +59,10 @@ sap.ui.define(
       },
 
       _setIDProduct: function () {
-        var sURL = this.getOwnerComponent()
-          .getRouter()
-          .getHashChanger()
-          .getHash()
-          .split("/")[0];
         var oNewProduct = this.getView().getModel("newProduct").oData;
         var oODataModel = this.getView().getModel();
 
-        oODataModel.read(`/${sURL}/Products`, {
+        oODataModel.read(`/Products`, {
           success: function (mData) {
             oNewProduct.ID = mData.results.length;
           },
